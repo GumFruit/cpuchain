@@ -58,13 +58,11 @@ Community and Contact info
 -------
 
 - [**CPUchain webpage**](https://cpuchain.org/)
-- [**CPUchain support e-mail**](mailto:info@cpuchain.org)
-- [**CPUchain twitter**](https://twitter.com/cpuchain)
-- [**CPUchain discord**](https://discord.io/cpuchain)
-- [**CPUchain telegram**](https://t.me/cpuchaincore)
-- [**CPUchain reddit**](https://reddit.com/r/cpuchain) 
+- [**CPUchain Core webpage**](https://cpuchaincore.org) (under construction)
+- [**CPUchain twitter**](https://twitter.com/cpuchaincore)
+- [**CPUchain discord**](https://discord.gg/zRamqNfBXQ)
 - [**CPUchain bitcointalk**](https://bitcointalk.org/index.php?topic=5161183.0)
-- [**CPUchain github**](https://github.com/cpuchain)
+- [**CPUchain github**](https://github.com/cpuchain-core)
 
 
 License
