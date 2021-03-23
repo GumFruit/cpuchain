@@ -1,6 +1,8 @@
 CPUchain Core
 =====================================
 
+[![Join the chat at https://gitter.im/cpuchain-core/cpuchain](https://badges.gitter.im/cpuchain-core/cpuchain.svg)](https://gitter.im/cpuchain-core/cpuchain?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 https://cpuchain.org
 
 About CPUchain 
