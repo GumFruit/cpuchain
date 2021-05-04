@@ -67,6 +67,13 @@ Community and Contact info
 - [**CPUchain github**](https://github.com/cpuchain-core)
 
 
+Sponsors
+-------
+
+[![mailman3.com](https://mailman3.com/mailman3.gif)](https://mailman3.com)
+[**mailman3.com**](https://mailman3.com) - Mailman 3 hosting service 
+Hosts [cpuchain-dev@mailman3.com](mailto:cpuchain-dev@mailman3.com) mailing list
+
 License
 -------
 
