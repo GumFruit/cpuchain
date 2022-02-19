@@ -1,4 +1,4 @@
-CPUchain<TS version="2.1" language="es_DO">
+<TS version="2.1" language="es_DO">
 <context>
     <name>AddressBookPage</name>
     <message>

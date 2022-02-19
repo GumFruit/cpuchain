@@ -117,8 +117,8 @@ static const uint32_t Krnd[64] = {
 #define RND(a, b, c, d, e, f, g, h, k)			\
 	h += S1(e) + Ch(e, f, g) + k;			\
 	d += h;						\
-	h += S0(a) + Maj(a, b, c);
-        y_xor_z = x_xor_y;
+	h += S0(a) + Maj(a, b, c); \
+    y_xor_z = x_xor_y;
 
 /* Adjusted round function for rotating state */
 #define RNDr(S, W, i, ii)			\

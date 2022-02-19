@@ -315,7 +315,7 @@ libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
 ipc/capnp/libbitcoin_ipc_a-ipc.$(OBJEXT): $(libbitcoin_ipc_mpgen_input:=.h)
 
-# server: shared between bitcoind and bitcoin-qt
+# server: shared between cpuchaind and cpuchain-qt
 # Contains code accessing mempool and chain state that is meant to be separated
 # from wallet and gui code (see node/README.md). Shared code should go in
 # libbitcoin_common or libbitcoin_util libraries, instead.
@@ -399,7 +399,7 @@ libbitcoin_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between bitcoind and bitcoin-qt, but only linked
+# wallet: shared between cpuchaind and cpuchain-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(SQLITE_CFLAGS)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -535,7 +535,7 @@ libbitcoin_consensus_a_SOURCES = \
   util/strencodings.h \
   version.h
 
-# common: shared between bitcoind, and bitcoin-qt and non-server tools
+# common: shared between cpuchaind, and cpuchain-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -627,7 +627,7 @@ libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 AM_LDFLAGS += $(COMPAT_LDFLAGS)
 endif
 
-# cli: shared between bitcoin-cli and bitcoin-qt
+# cli: shared between cpuchain-cli and cpuchain-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -639,7 +639,7 @@ libbitcoin_cli_a_SOURCES = \
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# bitcoind & bitcoin-node binaries #
+# cpuchaind & cpuchain-node binaries #
 cpuchain_daemon_sources = bitcoind.cpp
 cpuchain_bin_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 cpuchain_bin_cxxflags = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -664,19 +664,19 @@ cpuchain_bin_ldadd = \
 
 cpuchain_bin_ldadd += $(BOOST_LIBS) $(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(SQLITE_LIBS)
 
-cpuchaind_SOURCES = $(bitcoin_daemon_sources) init/bitcoind.cpp
-cpuchaind_CPPFLAGS = $(bitcoin_bin_cppflags)
-cpuchaind_CXXFLAGS = $(bitcoin_bin_cxxflags)
-cpuchaind_LDFLAGS = $(bitcoin_bin_ldflags)
-cpuchaind_LDADD = $(LIBBITCOIN_SERVER) $(bitcoin_bin_ldadd)
+cpuchaind_SOURCES = $(cpuchain_daemon_sources) init/bitcoind.cpp
+cpuchaind_CPPFLAGS = $(cpuchain_bin_cppflags)
+cpuchaind_CXXFLAGS = $(cpuchain_bin_cxxflags)
+cpuchaind_LDFLAGS = $(cpuchain_bin_ldflags)
+cpuchaind_LDADD = $(LIBBITCOIN_SERVER) $(cpuchain_bin_ldadd)
 
-cpuchain_node_SOURCES = $(bitcoin_daemon_sources) init/bitcoin-node.cpp
-cpuchain_node_CPPFLAGS = $(bitcoin_bin_cppflags)
-cpuchain_node_CXXFLAGS = $(bitcoin_bin_cxxflags)
-cpuchain_node_LDFLAGS = $(bitcoin_bin_ldflags)
-cpuchain_node_LDADD = $(LIBBITCOIN_SERVER) $(bitcoin_bin_ldadd) $(LIBBITCOIN_IPC) $(LIBMULTIPROCESS_LIBS)
+cpuchain_node_SOURCES = $(cpuchain_daemon_sources) init/bitcoin-node.cpp
+cpuchain_node_CPPFLAGS = $(cpuchain_bin_cppflags)
+cpuchain_node_CXXFLAGS = $(cpuchain_bin_cxxflags)
+cpuchain_node_LDFLAGS = $(cpuchain_bin_ldflags)
+cpuchain_node_LDADD = $(LIBBITCOIN_SERVER) $(cpuchain_bin_ldadd) $(LIBBITCOIN_IPC) $(LIBMULTIPROCESS_LIBS)
 
-# bitcoin-cli binary #
+# cpuchain-cli binary #
 cpuchain_cli_SOURCES = bitcoin-cli.cpp
 cpuchain_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 cpuchain_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -695,7 +695,7 @@ cpuchain_cli_LDADD = \
 cpuchain_cli_LDADD += $(BOOST_LIBS) $(EVENT_LIBS)
 #
 
-# bitcoin-tx binary #
+# cpuchain-tx binary #
 cpuchain_tx_SOURCES = bitcoin-tx.cpp
 cpuchain_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 cpuchain_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -716,19 +716,19 @@ cpuchain_tx_LDADD = \
 cpuchain_tx_LDADD += $(BOOST_LIBS)
 #
 
-# bitcoin-wallet binary #
+# cpuchain-wallet binary #
 cpuchain_wallet_SOURCES = bitcoin-wallet.cpp
-cpuchain_wallet_CPPFLAGS = $(bitcoin_bin_cppflags)
-cpuchain_wallet_CXXFLAGS = $(bitcoin_bin_cxxflags)
-cpuchain_wallet_LDFLAGS = $(bitcoin_bin_ldflags)
-cpuchain_wallet_LDADD = $(LIBBITCOIN_WALLET_TOOL) $(bitcoin_bin_ldadd)
+cpuchain_wallet_CPPFLAGS = $(cpuchain_bin_cppflags)
+cpuchain_wallet_CXXFLAGS = $(cpuchain_bin_cxxflags)
+cpuchain_wallet_LDFLAGS = $(cpuchain_bin_ldflags)
+cpuchain_wallet_LDADD = $(LIBBITCOIN_WALLET_TOOL) $(cpuchain_bin_ldadd)
 
 if TARGET_WINDOWS
 cpuchain_wallet_SOURCES += bitcoin-wallet-res.rc
 endif
 #
 
-# bitcoin-util binary #
+# cpuchain-util binary #
 cpuchain_util_SOURCES = bitcoin-util.cpp
 cpuchain_util_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 cpuchain_util_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
