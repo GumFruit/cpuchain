@@ -66,8 +66,8 @@
         <translation type="unfinished">接收地址</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">这些是你的比特币支付地址。在发送之前，一定要核对金额和接收地址。</translation>
+        <source>These are your CPUchain addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">这些是你的CPU器链支付地址。在发送之前，一定要核对金额和接收地址。</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -153,8 +153,8 @@
         <translation type="unfinished">确认钱包密码</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation type="unfinished">注意：如果你加密了钱包，丢失了密码，您将&lt;b&gt;丢失所有的比特币。</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR CPUCHAINS&lt;/b&gt;!</source>
+        <translation type="unfinished">注意：如果你加密了钱包，丢失了密码，您将&lt;b&gt;丢失所有的CPU器链。</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -173,8 +173,8 @@
         <translation type="unfinished">输入钱包的旧密码和新密码。</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">记住，加密您的钱包并不能完全保护您的比特币不被您电脑中的恶意软件窃取。</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your cpuchains from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">记住，加密您的钱包并不能完全保护您的CPU器链不被您电脑中的恶意软件窃取。</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -276,7 +276,7 @@
     </message>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>CPUchainGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation>&amp;概述</translation>
@@ -335,8 +335,8 @@
         <translation type="unfinished">启用代理:%1</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>发送比特币到一个比特币地址</translation>
+        <source>Send coins to a CPUchain address</source>
+        <translation>发送CPU器链到一个CPU器链地址</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -367,12 +367,12 @@
         <translation>加密您的钱包私钥</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>用您的比特币地址签名信息，以证明拥有它们</translation>
+        <source>Sign messages with your CPUchain addresses to prove you own them</source>
+        <translation>用您的CPU器链地址签名信息，以证明拥有它们</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>验证消息，确保它们是用指定的比特币地址签名的</translation>
+        <source>Verify messages to ensure they were signed with specified CPUchain addresses</source>
+        <translation>验证消息，确保它们是用指定的CPU器链地址签名的</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -391,8 +391,8 @@
         <translation>标签工具栏</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
-        <translation type="unfinished">请求支付(生成二维码和比特币链接)</translation>
+        <source>Request payments (generates QR codes and cpuchain: URIs)</source>
+        <translation type="unfinished">请求支付(生成二维码和CPU器链链接)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -457,8 +457,8 @@
         <translation type="unfinished">&amp;接受地址</translation>
     </message>
     <message>
-        <source>Open a bitcoin: URI</source>
-        <translation type="unfinished">打开比特币: URI</translation>
+        <source>Open a cpuchain: URI</source>
+        <translation type="unfinished">打开CPU器链: URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -473,8 +473,8 @@
         <translation type="unfinished">关闭钱包</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
-        <translation type="unfinished">显示%1帮助消息以获得可能包含Bitcoin命令行选项的列表</translation>
+        <source>Show the %1 help message to get a list with possible CPUchain command-line options</source>
+        <translation type="unfinished">显示%1帮助消息以获得可能包含CPUchain命令行选项的列表</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -505,7 +505,7 @@
         <translation type="unfinished">%1 客户端</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network.</source>
+        <source>%n active connection(s) to CPUchain network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -779,8 +779,8 @@
         <translation type="unfinished">编辑发送地址</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Bitcoin address.</source>
-        <translation type="unfinished">输入的地址"%1"不是有效的比特币地址。</translation>
+        <source>The entered address "%1" is not a valid CPUchain address.</source>
+        <translation type="unfinished">输入的地址"%1"不是有效的CPU器链地址。</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -825,8 +825,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Bitcoin</source>
-        <translation type="unfinished">比特币</translation>
+        <source>CPUchain</source>
+        <translation type="unfinished">CPU器链</translation>
     </message>
     <message numerus="yes">
         <source>(sufficient to restore backups %n day(s) old)</source>
@@ -1098,8 +1098,8 @@
         <translation type="unfinished">粉尘：</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for bitcoin transactions than the network can process.</source>
-        <translation type="unfinished">当交易量小于块的空间时，矿工和中继节点可以强制执行最低费用。只付最低费用就可以了，但注意，一旦比特币交易的需求超出网络的处理能力，就可能导致交易无法确认。</translation>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for cpuchain transactions than the network can process.</source>
+        <translation type="unfinished">当交易量小于块的空间时，矿工和中继节点可以强制执行最低费用。只付最低费用就可以了，但注意，一旦CPU器链交易的需求超出网络的处理能力，就可能导致交易无法确认。</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -1192,8 +1192,8 @@
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Bitcoin address</source>
-        <translation type="unfinished">警告：比特币地址无效</translation>
+        <source>Warning: Invalid CPUchain address</source>
+        <translation type="unfinished">警告：CPU器链地址无效</translation>
     </message>
     <message>
         <source>The address you selected for change is not part of this wallet. Any or all funds in your wallet may be sent to this address. Are you sure?</source>
@@ -1215,12 +1215,12 @@
         <translation type="unfinished">选择以前使用的地址</translation>
     </message>
     <message>
-        <source>The Bitcoin address to send the payment to</source>
-        <translation type="unfinished">支付到的比特币地址</translation>
+        <source>The CPUchain address to send the payment to</source>
+        <translation type="unfinished">支付到的CPU器链地址</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less bitcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation type="unfinished">手续费将从发出的总额中扣除。接受者收到的比特币将少于你输入的金额字段。如果选择了多个接受者，手续费将平均分配。</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less cpuchains than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation type="unfinished">手续费将从发出的总额中扣除。接受者收到的CPU器链将少于你输入的金额字段。如果选择了多个接受者，手续费将平均分配。</translation>
     </message>
     <message>
         <source>This is an unauthenticated payment request.</source>
@@ -1231,8 +1231,8 @@
         <translation type="unfinished">输入此地址的标签，将其添加到使用的地址列表中</translation>
     </message>
     <message>
-        <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
-        <translation type="unfinished">附在比特币上的消息:URI将与交易一起存储，供参考。注意：此信息不会通过比特币网络发送。</translation>
+        <source>A message that was attached to the cpuchain: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the CPUchain network.</source>
+        <translation type="unfinished">附在CPU器链上的消息:URI将与交易一起存储，供参考。注意：此信息不会通过CPU器链网络发送。</translation>
     </message>
     </context>
 <context>
@@ -1343,7 +1343,7 @@
     </message>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>cpuchain-core</name>
     <message>
         <source>Done loading</source>
         <translation type="unfinished">载入完成</translation>

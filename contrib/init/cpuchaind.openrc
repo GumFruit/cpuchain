@@ -1,0 +1,93 @@
+#!/sbin/openrc-run
+
+# backward compatibility for existing gentoo layout 
+#
+if [ -d "/var/lib/cpuchain/.cpuchain" ]; then
+	CPUCHAIND_DEFAULT_DATADIR="/var/lib/cpuchain/.cpuchain"
+else
+	CPUCHAIND_DEFAULT_DATADIR="/var/lib/cpuchaind"
+fi
+
+CPUCHAIND_CONFIGFILE=${CPUCHAIND_CONFIGFILE:-/etc/cpuchain/cpuchain.conf}
+CPUCHAIND_PIDDIR=${CPUCHAIND_PIDDIR:-/var/run/cpuchaind}
+CPUCHAIND_PIDFILE=${CPUCHAIND_PIDFILE:-${CPUCHAIND_PIDDIR}/cpuchaind.pid}
+CPUCHAIND_DATADIR=${CPUCHAIND_DATADIR:-${CPUCHAIND_DEFAULT_DATADIR}}
+CPUCHAIND_USER=${CPUCHAIND_USER:-${CPUCHAIN_USER:-cpuchain}}
+CPUCHAIND_GROUP=${CPUCHAIND_GROUP:-cpuchain}
+CPUCHAIND_BIN=${CPUCHAIND_BIN:-/usr/bin/cpuchaind}
+CPUCHAIND_NICE=${CPUCHAIND_NICE:-${NICELEVEL:-0}}
+CPUCHAIND_OPTS="${CPUCHAIND_OPTS:-${CPUCHAIN_OPTS}}"
+
+name="CPUchain Core Daemon"
+description="CPUchain cryptocurrency P2P network daemon"
+
+command="/usr/bin/cpuchaind"
+command_args="-pid=\"${CPUCHAIND_PIDFILE}\" \
+		-conf=\"${CPUCHAIND_CONFIGFILE}\" \
+		-datadir=\"${CPUCHAIND_DATADIR}\" \
+		-daemon \
+		${CPUCHAIND_OPTS}"
+
+required_files="${CPUCHAIND_CONFIGFILE}"
+start_stop_daemon_args="-u ${CPUCHAIND_USER} \
+			-N ${CPUCHAIND_NICE} -w 2000"
+pidfile="${CPUCHAIND_PIDFILE}"
+
+# The retry schedule to use when stopping the daemon. Could be either
+# a timeout in seconds or multiple signal/timeout pairs (like
+# "SIGKILL/180 SIGTERM/300")
+retry="${CPUCHAIND_SIGTERM_TIMEOUT}"
+
+depend() {
+	need localmount net
+}
+
+# verify
+# 1) that the datadir exists and is writable (or create it)
+# 2) that a directory for the pid exists and is writable
+# 3) ownership and permissions on the config file
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${CPUCHAIND_USER}:${CPUCHAIND_GROUP}" \
+	"${CPUCHAIND_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${CPUCHAIND_USER}:${CPUCHAIND_GROUP}" \
+	"${CPUCHAIND_PIDDIR}"
+
+	checkpath -f \
+	-o "${CPUCHAIND_USER}:${CPUCHAIND_GROUP}" \
+	-m 0660 \
+	"${CPUCHAIND_CONFIGFILE}"
+
+	checkconfig || return 1
+}
+
+checkconfig()
+{
+	if grep -qs '^rpcuser=' "${CPUCHAIND_CONFIGFILE}" && \
+		! grep -qs '^rpcpassword=' "${CPUCHAIND_CONFIGFILE}" ; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run cpuchaind."
+		eerror "The setting must appear in ${CPUCHAIND_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets "
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following "
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is recommended that you also set alertnotify so you are "
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"CPUchain Alert\"" \
+			"admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}

@@ -1,5 +1,5 @@
 ---
-name: "bitcoin-core-win-22"
+name: "cpuchain-core-win-22"
 enable_cache: true
 distro: "ubuntu"
 suites:
@@ -25,7 +25,7 @@ packages:
 - "python3-pip"
 remotes:
 - "url": "https://github.com/cpuchain/cpuchain.git"
-  "dir": "bitcoin"
+  "dir": "cpuchain"
 files: []
 script: |
   set -e -o pipefail
@@ -95,7 +95,7 @@ script: |
   create_per-host_compiler_wrapper "2000-01-01 12:00:00"
   export PATH=${WRAP_DIR}:${PATH}
 
-  cd bitcoin
+  cd cpuchain
   BASEPREFIX="${PWD}/depends"
   # Build dependencies for each host
   for i in $HOSTS; do

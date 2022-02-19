@@ -1,36 +1,36 @@
 #!/usr/bin/env bash
 #
-#  bitcoind The bitcoin core server.
+#  cpuchaind The cpuchain core server.
 #
 #
 # chkconfig: 345 80 20
-# description: bitcoind
-# processname: bitcoind
+# description: cpuchaind
+# processname: cpuchaind
 #
 
 # Source function library.
 . /etc/init.d/functions
 
-# you can override defaults in /etc/sysconfig/bitcoind, see below
-if [ -f /etc/sysconfig/bitcoind ]; then
-        . /etc/sysconfig/bitcoind
+# you can override defaults in /etc/sysconfig/cpuchaind, see below
+if [ -f /etc/sysconfig/cpuchaind ]; then
+        . /etc/sysconfig/cpuchaind
 fi
 
 RETVAL=0
 
-prog=bitcoind
-# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/bitcoind
-lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/bitcoind}
+prog=cpuchaind
+# you can override the lockfile via CPUCHAIND_LOCKFILE in /etc/sysconfig/cpuchaind
+lockfile=${CPUCHAIND_LOCKFILE-/var/lock/subsys/cpuchaind}
 
-# bitcoind defaults to /usr/bin/bitcoind, override with BITCOIND_BIN
-bitcoind=${BITCOIND_BIN-/usr/bin/bitcoind}
+# cpuchaind defaults to /usr/bin/cpuchaind, override with CPUCHAIND_BIN
+cpuchaind=${CPUCHAIND_BIN-/usr/bin/cpuchaind}
 
-# bitcoind opts default to -disablewallet, override with BITCOIND_OPTS
-bitcoind_opts=${BITCOIND_OPTS--disablewallet}
+# cpuchaind opts default to -disablewallet, override with CPUCHAIND_OPTS
+cpuchaind_opts=${CPUCHAIND_OPTS--disablewallet}
 
 start() {
     echo -n $"Starting $prog: "
-    daemon $DAEMONOPTS $bitcoind $bitcoind_opts
+    daemon $DAEMONOPTS $cpuchaind $cpuchaind_opts
     RETVAL=$?
     echo
     [ $RETVAL -eq 0 ] && touch $lockfile

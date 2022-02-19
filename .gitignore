@@ -2,14 +2,14 @@
 
 *.exe
 *.pdb
-src/bitcoin
-src/bitcoind
-src/bitcoin-cli
-src/bitcoin-gui
-src/bitcoin-node
-src/bitcoin-tx
-src/bitcoin-util
-src/bitcoin-wallet
+src/cpuchain
+src/cpuchaind
+src/cpuchain-cli
+src/cpuchain-gui
+src/cpuchain-node
+src/cpuchain-tx
+src/cpuchain-util
+src/cpuchain-wallet
 src/test/fuzz/fuzz
 src/test/test_bitcoin
 src/qt/test/test_bitcoin-qt
@@ -93,8 +93,8 @@ src/qt/bitcoin-qt.includes
 *.qm
 Makefile
 !depends/Makefile
-src/qt/bitcoin-qt
-Bitcoin-Qt.app
+src/qt/cpuchain-qt
+CPUchain-Qt.app
 background.tiff*
 
 # Qt Creator

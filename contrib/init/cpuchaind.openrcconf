@@ -1,0 +1,33 @@
+# /etc/conf.d/cpuchaind: config file for /etc/init.d/cpuchaind
+
+# Config file location
+#CPUCHAIND_CONFIGFILE="/etc/cpuchain/cpuchain.conf"
+
+# What directory to write pidfile to?  (created and owned by $CPUCHAIND_USER)
+#CPUCHAIND_PIDDIR="/var/run/cpuchaind"
+
+# What filename to give the pidfile
+#CPUCHAIND_PIDFILE="${CPUCHAIND_PIDDIR}/cpuchaind.pid"
+
+# Where to write cpuchaind data (be mindful that the blockchain is large)
+#CPUCHAIND_DATADIR="/var/lib/cpuchaind"
+
+# User and group to own cpuchaind process
+#CPUCHAIND_USER="cpuchain"
+#CPUCHAIND_GROUP="cpuchain"
+
+# Path to cpuchaind executable
+#CPUCHAIND_BIN="/usr/bin/cpuchaind"
+
+# Nice value to run cpuchaind under
+#CPUCHAIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#CPUCHAIND_OPTS=""
+
+# The timeout in seconds OpenRC will wait for cpuchaind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+CPUCHAIND_SIGTERM_TIMEOUT=600
