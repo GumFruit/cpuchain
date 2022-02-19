@@ -18,6 +18,7 @@
 #include <compat/sanity.h>
 #include <deploymentstatus.h>
 #include <fs.h>
+#include <hashdb.h>
 #include <hash.h>
 #include <httprpc.h>
 #include <httpserver.h>
@@ -262,6 +263,7 @@ void Shutdown(NodeContext& node)
             if (chainstate->CanFlushToDisk()) {
                 chainstate->ForceFlushStateToDisk();
                 chainstate->ResetCoinsViews();
+                phashdb.reset();
             }
         }
         pblocktree.reset();
@@ -1360,6 +1362,10 @@ bool AppInitMain(NodeContext& node, interfaces::BlockAndHeaderTipInfo* tip_info)
                 pblocktree.reset();
                 pblocktree.reset(new CBlockTreeDB(nBlockTreeDBCache, false, fReset));
 
+                // TODO: add cache size option for CHashDB
+                phashdb.reset();
+                phashdb.reset(new CHashDB(nBlockTreeDBCache, false, fReset));
+                
                 if (fReset) {
                     pblocktree->WriteReindexing(true);
                     //If we're reindexing in prune mode, wipe away unusable block files and all undo data files

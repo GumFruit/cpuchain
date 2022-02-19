@@ -13,6 +13,7 @@
 #include <consensus/validation.h>
 #include <deploymentstatus.h>
 #include <hash.h>
+#include <hashdb.h>
 #include <index/blockfilterindex.h>
 #include <merkleblock.h>
 #include <netbase.h>
@@ -1565,7 +1566,7 @@ void PeerManagerImpl::BlockChecked(const CBlock& block, const BlockValidationSta
 {
     LOCK(cs_main);
 
-    const uint256 hash(block.GetHash());
+    const uint256 hash(phashdb->GetHash(block));
     std::map<uint256, std::pair<NodeId, bool>>::iterator it = mapBlockSource.find(hash);
 
     // If the block failed validation, we know where it came from and we're still connected
