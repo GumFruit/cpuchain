@@ -15,10 +15,10 @@
 #define CLIENT_VERSION_IS_RELEASE true
 
 /* Major version */
-#define CLIENT_VERSION_MAJOR 22
+#define CLIENT_VERSION_MAJOR 0
 
 /* Minor version */
-#define CLIENT_VERSION_MINOR 0
+#define CLIENT_VERSION_MINOR 22
 
 /* Copyright holder(s) before %s replacement */
 #define COPYRIGHT_HOLDERS "The %s developers"
@@ -254,7 +254,7 @@
 #define PACKAGE_NAME "CPUchain Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "CPUchain Core 22.0.0"
+#define PACKAGE_STRING "CPUchain Core 0.22.0"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "cpuchain"
@@ -263,7 +263,7 @@
 #define PACKAGE_URL "https://cpuchain.org/"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "22.0.0"
+#define PACKAGE_VERSION "0.22.0"
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */
